@@ -61,6 +61,7 @@ Bundle-Description: ${project.description}
 					<version>2.4</version>
 					<configuration>
 						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>					
 							<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
 						</archive>
 					</configuration>
