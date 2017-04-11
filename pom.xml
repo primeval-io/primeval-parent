@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.primeval</groupId>
 	<artifactId>primeval-parent</artifactId>
-	<version>1-SNAPSHOT</version>
+	<version>1</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -12,6 +12,36 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
+
+	<name>Primeval Parent</name>
+	<description>Primeval Parent POM</description>
+
+	<url>http://www.primeval.io</url>
+
+	<organization>
+		<name>Primeval</name>
+		<url>http://www.primeval.io</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>magnet</id>
+			<name>Simon Chemouil</name>
+			<organization>Lambdacube</organization>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/primeval-io/primeval-parent</url>
+	</scm>
 
 	<build>
 		<pluginManagement>
@@ -61,7 +91,7 @@ Bundle-Description: ${project.description}
 					<version>2.4</version>
 					<configuration>
 						<archive>
-							<addMavenDescriptor>false</addMavenDescriptor>					
+							<addMavenDescriptor>false</addMavenDescriptor>
 							<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
 						</archive>
 					</configuration>
@@ -82,6 +112,30 @@ Bundle-Description: ${project.description}
 			</plugins>
 		</pluginManagement>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 </project>
 
