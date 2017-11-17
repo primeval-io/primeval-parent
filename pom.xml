@@ -26,14 +26,6 @@
 		<url>http://www.primeval.io</url>
 	</organization>
 
-	<developers>
-		<developer>
-			<id>magnet</id>
-			<name>Simon Chemouil</name>
-			<organization>Lambdacube</organization>
-		</developer>
-	</developers>
-
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
